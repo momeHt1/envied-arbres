@@ -346,11 +346,12 @@
                     <strong style="color: #fff;">Intervention :</strong> Tarn (81)
                 </p>
             </div>
-            <form class="contact-form" action="https://formsubmit.co/vidougilles@gmail.com" method="POST" enctype="multipart/form-data">
+           <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
                 
-                <input type="hidden" name="_subject" value="🔔 Nouvelle demande de devis (En vie d'Arbres)">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="access_key" value="СЮДА_ВСТАВИТЬ_ВАШ_КЛЮЧ">
+                
+                <input type="hidden" name="subject" value="🔔 Nouvelle demande de devis (En vie d'Arbres)">
+                <input type="hidden" name="redirect" value="https://momeht1.github.io/">
 
                 <input type="text" name="Nom_et_Prenom" placeholder="Nom Prénom" required>
                 <input type="tel" name="Telephone" placeholder="Téléphone" required>
@@ -358,7 +359,7 @@
                 <div class="file-upload" id="photo-upload-area">
                     <label for="tree-photo"><i class="fa-solid fa-camera" style="font-size: 1.2rem; color: var(--primary);"></i> <strong>Joindre une photo</strong></label>
                     <span id="file-name" style="color: var(--text-main); font-size: 0.9rem;">(Optionnel)</span>
-                    <input type="file" name="Photo_Arbre" id="tree-photo" accept="image/*" style="display: none;">
+                    <input type="file" name="attachment" id="tree-photo" accept="image/*" style="display: none;">
                 </div>
 
                 <textarea name="Message" rows="4" placeholder="Votre message ou description de l'arbre..." required></textarea>
