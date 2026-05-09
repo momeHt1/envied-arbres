@@ -346,20 +346,25 @@
                     <strong style="color: #fff;">Intervention :</strong> Tarn (81)
                 </p>
             </div>
-            <div class="contact-form">
-                <input type="text" placeholder="Nom Prénom">
-                <input type="tel" placeholder="Téléphone">
+            <form class="contact-form" action="https://formsubmit.co/vidougilles@gmail.com" method="POST" enctype="multipart/form-data">
+                
+                <input type="hidden" name="_subject" value="🔔 Nouvelle demande de devis (En vie d'Arbres)">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+
+                <input type="text" name="Nom_et_Prenom" placeholder="Nom Prénom" required>
+                <input type="tel" name="Telephone" placeholder="Téléphone" required>
                 
                 <div class="file-upload" id="photo-upload-area">
                     <label for="tree-photo"><i class="fa-solid fa-camera" style="font-size: 1.2rem; color: var(--primary);"></i> <strong>Joindre une photo</strong></label>
                     <span id="file-name" style="color: var(--text-main); font-size: 0.9rem;">(Optionnel)</span>
-                    <input type="file" id="tree-photo" accept="image/*" style="display: none;">
+                    <input type="file" name="Photo_Arbre" id="tree-photo" accept="image/*" style="display: none;">
                 </div>
 
-                <textarea rows="4" placeholder="Votre message ou description de l'arbre..."></textarea>
-                <button class="btn btn-primary" style="background-color: #10B981; color: white;">ENVOYER</button>
-            </div>
-        </div>
+                <textarea name="Message" rows="4" placeholder="Votre message ou description de l'arbre..." required></textarea>
+                
+                <button type="submit" class="btn btn-primary" style="background-color: #10B981; color: white;">ENVOYER</button>
+            </form>
     </section>
 
     <footer>
