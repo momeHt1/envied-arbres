@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentions Légales | En vie... d'Arbres</title>
+    <link rel="icon" type="image/webp" href="logo entreprise 2.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Базовые стили с главной страницы для сохранения дизайна */
+        *, *::before, *::after { box-sizing: border-box; }
+        :root {
+            --dark-bg: #111827; 
+            --primary: #10B981; 
+            --text-main: #374151; 
+            --text-light: #f3b015;
+            --bg-light: #e3f29e;
+            --white: #f1ca6d;
+            --gold: #F4C430;
+        }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-light); color: var(--text-main); line-height: 1.8; margin: 0; }
+        h1, h2, h3 { color: var(--dark-bg); text-transform: uppercase; }
+        a { text-decoration: none; color: var(--primary); transition: 0.2s; }
+        a:hover { color: var(--dark-bg); }
+        .container { width: 100%; max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        
+        /* Шапка и подвал (как на главной) */
+        header { background: var(--white); padding: 15px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .logo-link { font-size: 24px; font-weight: 900; color: var(--dark-bg); display: flex; align-items: center; gap: 10px; }
+        footer { background: var(--dark-bg); color: var(--text-light); padding: 40px 0; text-align: center; margin-top: 50px; }
+
+        /* Блок контента */
+        .legal-content { background: #fff; padding: 50px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .legal-content h1 { font-size: 2.5rem; text-align: center; margin-bottom: 40px; color: var(--dark-bg); }
+        .legal-content h2 { font-size: 1.5rem; color: var(--primary); margin-top: 40px; border-bottom: 2px solid var(--bg-light); padding-bottom: 10px; }
+        
+        @media (max-width: 768px) {
+            .legal-content { padding: 30px 20px; }
+            .legal-content h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container" style="padding-top: 0; padding-bottom: 0;">
+            <a href="index.html" class="logo-link">
+                <img src="logo entreprise 2.webp" alt="En vie d'Arbres" style="height: 50px; width: auto;">
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="legal-content">
+            <h1>Mentions Légales</h1>
+
+            <h2>1. Éditeur du site</h2>
+            <p>Le site <strong>En vie... d'Arbres</strong> est édité par :<br>
+            <strong>Nom / Raison sociale :</strong>  Gilles Vidou<br>
+            <strong>Statut juridique :</strong> Auto-entrepreneur / EI<br>
+            <strong>Adresse :</strong> 68 Avenue Abel Rolland 81390 BRIATEXTE<br>
+            <strong>Téléphone :</strong> 06 73 13 77 13<br>
+            <strong>Email :</strong> vidougilles@gmail.com<br>
+            <strong>SIRET :</strong> 93026612700016</p>
+
+            <h2>2. Directeur de la publication</h2>
+            <p>Le directeur de la publication est <strong>Gilles Vidou</strong>.</p>
+
+            <h2>3. Hébergement du site</h2>
+            <p>Le site est hébergé par :<br>
+            <strong>Nom de l'hébergeur :</strong> [НАЗВАНИЕ ХОСТИНГА, например: Hostinger International Ltd.]<br>
+            <strong>Adresse :</strong> [АДРЕС ХОСТИНГА]<br>
+            <strong>Site web :</strong> [САЙТ ХОСТИНГА]</p>
+
+            <h2>4. Propriété intellectuelle</h2>
+            <p>L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques. La reproduction de tout ou partie de ce site sur un support électronique quel qu'il soit est formellement interdite sauf autorisation expresse du directeur de la publication.</p>
+
+            <h2>5. Données personnelles et RGPD</h2>
+            <p>Les informations recueillies via le formulaire de contact (nom, téléphone, email) sont destinées exclusivement à <strong>En vie... d'Arbres</strong> dans le but de répondre à votre demande de devis ou d'intervention. Ces données ne sont en aucun cas cédées ou vendues à des tiers.<br>
+            Conformément à la loi "Informatique et Libertés" et au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Vous pouvez exercer ce droit en nous contactant à l'adresse : <strong>vidougilles@gmail.com</strong>.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container" style="padding-top: 0; padding-bottom: 0;">
+            <p style="font-weight: bold; color: var(--white); font-size: 1.1rem;">🌳 En vie... d'Arbres. Arboristes-Grimpeurs Certifiés.</p>
+            <a href="index.html" style="color: var(--white); text-decoration: underline; margin-top: 15px; display: inline-block;">Retour à l'accueil</a>
+        </div>
+    </footer>
+
+</body>
+</html>

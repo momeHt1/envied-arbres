@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>En vie... d'Arbres | Élagage & Abattage dans le Tarn (81)</title>
+    
+    <link rel="icon" type="image/webp" href="logo entreprise 2.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "En vie... d'Arbres",
+      "image": "https://www.votre-site.fr/avont.webp",
+      "telephone": "+33673137713",
+      "email": "vidougilles@gmail.com",
+      "areaServed": [
+        { "@type": "City", "name": "Albi" },
+        { "@type": "City", "name": "Castres" },
+        { "@type": "City", "name": "Gaillac" },
+        { "@type": "City", "name": "Graulhet" },
+        { "@type": "City", "name": "Lavaur" }
+      ]
+    }
+    </script>
+
+    <style>
+        /* =========================================
+           1. БАЗОВЫЕ НАСТРОЙКИ И СБРОС
+        ========================================= */
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body { 
+            width: 100%; 
+            max-width: 100vw; 
+            overflow-x: hidden; 
+            margin: 0; 
+            padding: 0; 
+            overflow-wrap: break-word; 
+            scroll-behavior: smooth;
+        }
+
+        /* ВАШИ ВОССТАНОВЛЕННЫЕ ЦВЕТА "Premium Eco" */
+        :root {
+            --dark-bg: #111827; 
+            --primary: #10B981; 
+            --primary-hover: #059669;
+            --whatsapp: #25D366; 
+            --text-main: #374151; 
+            --text-light: #f3b015; /* Ваш золотистый */
+            --bg-light: #e3f29e;   /* Ваш оливково-желтый фон */
+            --white: #f1ca6d;      /* Ваш золотой фон для карточек */
+            --alert-red: #D32F2F; 
+            --gold: #F4C430;       /* Акцентный золотой */
+        }
+
+        body { font-family: 'Inter', 'Segoe UI', sans-serif; background: var(--bg-light); color: var(--text-main); line-height: 1.6; }
+        h1, h2, h3 { color: var(--dark-bg); margin-top: 0; text-transform: uppercase; letter-spacing: -0.5px;}
+        a { text-decoration: none; transition: 0.2s; }
+        
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section { padding: 80px 0; text-align: center; }
+        .section-title { font-size: 2.8rem; margin-bottom: 20px; font-weight: 800; }
+        .section-subtitle { font-size: 1.1rem; color: var(--text-main); max-width: 700px; margin: 0 auto 50px auto; padding: 0 10px; }
+        
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+
+        /* =========================================
+           2. ДИНАМИКА И АНИМАЦИИ
+        ========================================= */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .grid-3 .card:nth-child(1) { transition-delay: 0.1s; }
+        .grid-3 .card:nth-child(2) { transition-delay: 0.25s; }
+        .grid-3 .card:nth-child(3) { transition-delay: 0.4s; }
+
+        .card { transition: transform 0.4s ease, box-shadow 0.4s ease; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+        .card i { transition: transform 0.4s ease, color 0.3s ease; }
+        .card:hover i { transform: scale(1.15) rotate(5deg); color: var(--primary-hover); }
+        .trust-item { transition: transform 0.3s ease; }
+        .trust-item:hover { transform: translateY(-5px) scale(1.05); }
+
+        /* =========================================
+           3. БЛОКИ САЙТА
+        ========================================= */
+        
+        /* Шапка */
+        header { background: var(--white); padding: 15px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: 900; color: var(--dark-bg); letter-spacing: -1px;}
+        .logo i { color: var(--primary); margin-right: 5px; }
+        nav { display: flex; gap: 30px; }
+        nav a { color: var(--dark-bg); font-weight: 700; text-transform: uppercase; font-size: 0.9rem; }
+        nav a:hover { color: var(--primary); }
+        .header-actions { display: flex; gap: 10px; align-items: center; }
+        .btn-header-outline { background: transparent; color: var(--alert-red); border: 2px solid var(--alert-red); padding: 8px 18px; border-radius: 50px; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
+        .btn-header-outline:hover { background: var(--alert-red); color: #fff; }
+
+        /* Кнопки */
+        .btn { padding: 16px 30px; border-radius: 50px; font-size: 1.1rem; font-weight: bold; text-transform: uppercase; display: inline-flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: auto; max-width: 100%; transition: transform 0.2s;}
+        .btn:hover { transform: translateY(-3px); }
+        .btn-primary { background: var(--primary); color: #fff; border: 2px solid var(--primary); }
+        .btn-whatsapp-hero { background: transparent; border: 2px solid var(--whatsapp); color: var(--whatsapp); }
+        .btn-whatsapp-hero:hover { background: var(--whatsapp); color: #fff; }
+
+        /* Главный экран (Восстановлены ваши цвета E5C158) */
+       .hero { 
+            background: linear-gradient(rgba(17, 24, 39, 0.4), rgba(17, 24, 39, 0.4)), url('headfoto.jpeg') center/cover;
+            color: #E5C158; 
+            text-align: center; 
+            padding: 150px 20px; 
+        }
+        .hero h1 { color: #E5C158; font-size: 4rem; line-height: 1.1; margin-bottom: 25px; text-shadow: 2px 2px 10px rgba(0,0,0,0.9); }
+        .hero p { font-size: 1.3rem; color: #E5C158; margin-bottom: 50px; text-shadow: 1px 1px 8px rgba(0,0,0,0.9); }
+        .hero-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+
+        /* Иконки доверия */
+        .trust-badges { background: var(--white); padding: 40px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .trust-grid { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; }
+        .trust-item { flex: 1; min-width: 150px; text-align: center; padding: 10px;}
+        .trust-item i { font-size: 2.2rem; color: var(--primary); margin-bottom: 10px; }
+        .trust-item h4 { margin: 0; font-size: 0.9rem; color: var(--dark-bg); font-weight: 800; text-transform: uppercase; }
+
+        /* Услуги - Карточки */
+        .card { background: var(--white); padding: 40px 20px; border-radius: 16px; text-align: center; border: 1px solid #E5E7EB; }
+        .card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
+        .card h3 { font-weight: 800; font-size: 1.3rem; margin-bottom: 15px;}
+
+       /* Темный блок */
+        .dark-section { background: var(--dark-bg); color: #fff; }
+        .dark-section h2, .dark-section p { color: #fff; }
+        /* Делаем заголовки карточек золотыми */
+        .dark-section h3 { color: #F4C430; } 
+        .dark-section .card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); color: #fff; box-shadow: none;}
+        /* Слайдер ДО/ПОСЛЕ */
+        .ba-container {
+            position: relative; width: 100%; max-width: 800px; height: 450px; 
+            margin: 0 auto; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .ba-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+        .ba-label { position: absolute; top: 15px; background: rgba(17, 24, 39, 0.7); color: #fff; padding: 6px 12px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; z-index: 10;}
+        #before-image { clip-path: inset(0 50% 0 0); z-index: 5; }
+        .ba-slider { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: transparent; outline: none; -webkit-appearance: none; margin: 0; z-index: 20; cursor: ew-resize; }
+        .ba-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 40px; height: 40px; background: var(--primary); border-radius: 50%; box-shadow: 0 0 10px rgba(0,0,0,0.5); }
+
+        /* КАРТА GOOGLE в аккуратном блоке */
+        .map-wrapper {
+            position: relative; width: 100%; max-width: 1000px; margin: 0 auto; height: 450px;
+            background: var(--white); padding: 0; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #E5E7EB; overflow: hidden;
+        }
+        .map-wrapper iframe { width: 100%; height: 100%; border: 0; filter: grayscale(0.1) contrast(1.1); display: block; }
+
+        /* Контакты (Восстановлены ваши цвета F4C430) */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: var(--white); border-radius: 16px; overflow: hidden; border: 1px solid #E5E7EB; text-align: left;}
+        .contact-info { background: var(--dark-bg); color: #fff; padding: 60px; }
+        .contact-info h2 { color: #F4C430; font-size: 2.5rem; margin-bottom: 30px;}
+        .contact-info a { color: #F4C430; display: flex; align-items: center; gap: 15px; margin: 25px 0; font-size: 1.2rem; }
+        .contact-info i { color: var(--primary); }
+        .contact-form { padding: 60px; }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 16px; margin-bottom: 20px; border: 1px solid #D1D5DB; border-radius: 8px; font-family: inherit;}
+        
+        .file-upload { background: var(--bg-light); padding: 15px; border: 2px dashed var(--primary); border-radius: 8px; text-align: center; margin-bottom: 20px; cursor: pointer; transition: 0.2s;}
+        .file-upload:hover { background: #e6fffa; }
+        .file-upload label { display: block; font-weight: bold; margin-bottom: 5px; color: var(--dark-bg); cursor: pointer;}
+        .contact-form button { width: 100%; border: none; cursor: pointer; border-radius: 8px; font-size: 1.1rem; padding: 18px; font-weight: bold;}
+
+        /* Подвал */
+        footer { background: var(--dark-bg); color: var(--text-light); padding: 50px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+
+        /* Плавающие виджеты */
+        .floating-widgets { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 1000; }
+        .widget-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #fff; font-size: 30px; background: var(--whatsapp); box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: transform 0.3s;}
+        .widget-btn:hover { transform: scale(1.1); }
+        
+        .mobile-sticky-btn { display: none; }
+
+        /* =========================================
+           4. АДАПТИВНОСТЬ (МОБИЛЬНЫЕ УСТРОЙСТВА)
+        ========================================= */
+        @media (max-width: 900px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3rem; }
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .logo { font-size: 1.2rem; }
+            .header-content { justify-content: space-between; }
+            .btn-header-outline { display: none; }
+            
+            .hero { padding: 100px 20px; }
+            .hero h1 { font-size: 2.3rem; }
+            .btn { width: 100%; }
+            
+            .grid-3 { grid-template-columns: 1fr; }
+            .ba-container { height: 280px; }
+            .map-wrapper { height: 350px; }
+            
+            .contact-info, .contact-form { padding: 40px 20px; }
+            
+            /* Липкая кнопка снизу */
+            .mobile-sticky-btn {
+                display: block; position: fixed; bottom: 0; left: 0; width: 100%;
+                background-color: var(--primary); color: #fff; text-align: center;
+                padding: 18px; font-size: 1.1rem; font-weight: bold; z-index: 1000;
+            }
+            
+            body { padding-bottom: 60px; }
+            
+            /* Кнопка WhatsApp над липкой панелью */
+            .floating-widgets { 
+                display: flex; 
+                bottom: 80px; 
+                right: 15px; 
+            }
+            .widget-btn { width: 50px; height: 50px; font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo"><img src="logo entreprise 2.webp" alt="En vie d'Arbres" style="height: 50px; width: auto; vertical-align: middle;"></div>
+            <nav>
+                <a href="#accueil">Accueil</a>
+                <a href="#services">Services</a>
+                <a href="#projets">Réalisations</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="tel:+33673137713" class="btn-header-outline"><i class="fa-solid fa-phone"></i> Urgence</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="accueil" class="hero">
+        <div class="container reveal">
+            <h1>Arboriste Grimpeur : Élagage & Abattage</h1>
+            <p>Intervention immédiate : Albi, Castres, Gaillac, Graulhet, Lavaur et tout le Tarn (81). Respect de l'arbre et sécurité totale.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/33673137713" class="btn btn-whatsapp-hero"><i class="fa-brands fa-whatsapp"></i> WhatsApp Direct</a>
+                <a href="#contact" class="btn btn-primary">Demander un devis</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="trust-badges">
+        <div class="container trust-grid reveal">
+            <div class="trust-item"><i class="fa-solid fa-shield-halved"></i><h4>Assurance Décennale</h4></div>
+            <div class="trust-item"><i class="fa-regular fa-clock"></i><h4>Devis sous 24h</h4></div>
+            <div class="trust-item"><i class="fa-solid fa-broom"></i><h4>Chantier Propre</h4></div>
+            <div class="trust-item"><i class="fa-solid fa-leaf"></i><h4>Soin de l'Arbre</h4></div>
+        </div>
+    </div>
+
+    <section id="services" class="section container">
+        <h2 class="section-title reveal">Nos Prestations</h2>
+        <p class="section-subtitle reveal">Gamme complète pour l'entretien et la santé de vos arbres.</p>
+        <div class="grid-3">
+            <div class="card reveal">
+                <i class="fa-solid fa-scissors"></i>
+                <h3>Taille & Élagage doux</h3>
+                <p>Maintien de la santé de l'arbre et taille architecturée pour l'esthétique.</p>
+            </div>
+            <div class="card reveal">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <h3>Abattage Complexe</h3>
+                <p>Démontage sécurisé par rétention dans les zones à risque.</p>
+            </div>
+            <div class="card reveal">
+                <i class="fa-solid fa-wind"></i>
+                <h3>Mise en Sécurité</h3>
+                <p>Intervention rapide pour sécuriser les branches après tempête.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="technologies" class="section dark-section reveal">
+        <div class="container">
+            <div class="badge">Matériel Pro</div>
+            <h2 class="section-title">Expertise et Performance</h2>
+            <div class="grid-3" style="margin-top: 40px;">
+                <div class="card reveal">
+                    <i class="fa-solid fa-truck-pickup"></i>
+                    <h3>Évacuation Complète</h3>
+                    <p>Broyage sur place et nettoyage méticuleux de votre jardin.</p>
+                </div>
+                <div class="card reveal">
+                    <i class="fa-solid fa-helmet-safety"></i>
+                    <h3>Accès par Cordes</h3>
+                    <p>Travail en hauteur sans nacelle pour protéger vos sols.</p>
+                </div>
+                <div class="card reveal">
+                    <i class="fa-solid fa-magnifying-glass-location"></i>
+                    <h3>Diagnostic Arbre</h3>
+                    <p>Évaluation de la structure et détection des maladies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projets" class="section container reveal">
+        <h2 class="section-title">Nos Réalisations</h2>
+        <p class="section-subtitle">Avant / Après : La preuve de notre savoir-faire.</p>
+        <div class="ba-container">
+            <img src="apre.webp" alt="Apres" class="ba-image">
+            <div class="ba-label" style="right: 15px;">APRÈS</div>
+            <img src="avont.webp" alt="Avant" class="ba-image" id="before-image">
+            <div class="ba-label" style="left: 15px; z-index: 10;">AVANT</div>
+            <input type="range" min="0" max="100" value="50" class="ba-slider" oninput="document.getElementById('before-image').style.clipPath = 'inset(0 ' + (100 - this.value) + '% 0 0)'">
+        </div>
+    </section>
+
+    <section id="carte" class="section container reveal">
+        <div class="badge">Proximité</div>
+        <h2 class="section-title">Notre Zone d'Intervention</h2>
+        <p class="section-subtitle">Nous intervenons rapidement à Albi, Castres, Gaillac, Graulhet, Lavaur et alentours.</p>
+        <div class="map-wrapper">
+            <iframe src="https://maps.google.com/maps?q=43.7614,1.9892&t=&z=10&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <section id="contact" class="section container" style="padding-top: 40px;">
+        <div class="contact-grid reveal">
+            <div class="contact-info">
+                <h2>NOUS CONTACTER</h2>
+                <p style="color: #9CA3AF; margin-bottom: 40px;">Devis gratuit ou urgence tempête.</p>
+                
+                <a href="tel:+33673137713"><i class="fa-solid fa-phone"></i> 06 73 13 77 13</a>
+                <a href="mailto:vidougilles@gmail.com"><i class="fa-solid fa-envelope"></i> vidougilles@gmail.com</a>
+                
+                <a href="https://www.facebook.com/profile.php?id=61571332877951" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                
+                <p style="margin-top: 40px; font-size: 1.1rem; line-height: 1.8;">
+                    <i class="fa-solid fa-location-dot" style="color: var(--primary); margin-right: 10px;"></i> 
+                    <strong style="color: #fff;">Intervention :</strong> Tarn (81)
+                </p>
+            </div>
+            <div class="contact-form">
+                <input type="text" placeholder="Nom Prénom">
+                <input type="tel" placeholder="Téléphone">
+                
+                <div class="file-upload" id="photo-upload-area">
+                    <label for="tree-photo"><i class="fa-solid fa-camera" style="font-size: 1.2rem; color: var(--primary);"></i> <strong>Joindre une photo</strong></label>
+                    <span id="file-name" style="color: var(--text-main); font-size: 0.9rem;">(Optionnel)</span>
+                    <input type="file" id="tree-photo" accept="image/*" style="display: none;">
+                </div>
+
+                <textarea rows="4" placeholder="Votre message ou description de l'arbre..."></textarea>
+                <button class="btn btn-primary" style="background-color: #10B981; color: white;">ENVOYER</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container reveal">
+            <p style="font-weight: bold; color: var(--white); font-size: 1.1rem;">🌳 En vie... d'Arbres. Arboristes-Grimpeurs Certifiés.</p>
+            <p style="color: var(--text-light);">Responsabilité Civile & Garantie Décennale.</p>
+           <p style="margin-top: 20px; font-size: 0.85rem; color: var(--text-light); opacity: 0.7;">
+    © 2026 En vie... d'Arbres | 
+    <a href="mentions-legales.html" style="color: var(--text-light); text-decoration: underline;">Mentions Légales</a>
+</p>
+        </div>
+    </footer>
+
+    <div class="floating-widgets">
+        <a href="https://wa.me/33673137713" class="widget-btn w-wa"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+
+    <a href="tel:+33673137713" class="mobile-sticky-btn">📞 URGENCE / DEVIS RAPIDE</a>
+
+    <script>
+        // 1. Скрипт для названия прикрепленного фото
+        document.getElementById('tree-photo').addEventListener('change', function(e) {
+            var fileName = e.target.files[0] ? e.target.files[0].name : "(Optionnel)";
+            document.getElementById('file-name').innerText = fileName;
+        });
+
+        // 2. Скрипт для плавной анимации появления блоков при скролле
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            document.querySelectorAll('.reveal').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
